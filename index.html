@@ -249,7 +249,31 @@
             margin: 10px;
             margin: 20px 0 20px 0;
         }
-          
+          .carousel-caption h2 {
+            font-family: 'Exo', sans-serif;
+            font-size: 18px; /* Double the font size for the carousel title */
+        }
+
+        .carousel-caption p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 12px; /* Font size for the carousel description */
+        }
+        .carousel-button {
+            background-color: green;
+            border: 2px solid green; /* Set the border color to green */
+            color: #fff;
+            padding: 5px 10px;
+            font-size: 9px;
+            transition: border-color 0.3s; /* Smooth transition for border color */
+            margin-top: 5px;
+            text-decoration: none; /* Remove text decoration */
+            border-radius: 20px; /* Add rounded border */
+        }
+
+        /* Button hover effect */
+        .carousel-button:hover {
+            border-color: #00ff00; /* Neon green border color on hover */
+        } 
         }
 
         @media (min-width: 768px) {
@@ -262,6 +286,7 @@
             margin: 10px;
             margin: 20px 0 20px 0;
         }
+      
         }
     </style>
     <title>Light Studios</title>
@@ -328,10 +353,10 @@
 
     <div class="container mt-5">
         <div class="flex-container">
-            <div class="flex-item-image" data-aos="fade-left" delay="500">
+            <div class="flex-item-image" data-aos="fade-left">
                 <img src="post1.jpg" alt="Image" class="img-fluid custom-image w-75">
             </div>
-            <div class="flex-item-text" data-aos="fade-right" delay="500">
+            <div class="flex-item-text" data-aos="fade-right">
                 <h2>Unleashing the Power:<br> A Guide to Gaming Computer Components</h2>
                 <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;"> 
                 <p class="mt-4">Discover the thrilling world of gaming computer components that fuel your victories and immerse you in mesmerizing gameplay. In this comprehensive guide, we delve into the heart of high-performance gaming rigs and explore the key components that ensure you stay at the forefront of gaming excellence. From powerful processors and cutting-edge graphics cards to lightning-fast storage solutions, join us on a journey to unlock the true potential of your gaming experience.</p>
@@ -340,8 +365,8 @@
     </div>
 
     <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;">
-    <center><h2 class="review-heading mx-5" data-aos="zoom-in" delay="500">Products</h2></center><br>
-    <div class="container-fluid  py-5" data-aos="fade-up" delay="500">
+    <center><h2 class="review-heading mx-5" data-aos="zoom-in">Products</h2></center><br>
+    <div class="container-fluid  py-5" data-aos="fade-up">
        <div class="card flex-item mx-5">
             <img src="p1.jpg" c5lass="card-img-top img-fluid w-100 h-100" alt="...">
             <div class="card-body">
@@ -370,7 +395,7 @@
     <div id="textCarousel" class="carousel slide mx-lg-5" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <center>
-                <h2 class="review-heading mx-5 mt-5 my-3" data-aos="zoom-in" delay="500">Review</h2><br>
+                <h2 class="review-heading mx-5 mt-5 my-3" data-aos="zoom-in">Review</h2><br>
                   </center>
             <div class="carousel-item active">
                 <blockquote class="review mb-3">
@@ -396,12 +421,12 @@
     <div class="container-xxl contact py-5 pt-5 pb-5">
         <div class="container">
             <div class="section-title text-center mx-auto" style="max-width: 500px;">
-                <h1 class="display-6 text-success" data-aos="zoom-in" delay="500">Contact us</h1>
+                <h1 class="display-6 text-success" data-aos="zoom-in" >Contact us</h1>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <p class="text-center mb-5"  data-aos="fade-up" delay="500">Thank you for your interest in our products and services. If you have any questions, feedback, or inquiries, please don't hesitate to get in touch with us. We value your opinion and are always ready to assist you.</p>
-                    <div class="row g-5"data-aos="fade-up" delay="500">
+                    <p class="text-center mb-5"  data-aos="fade-up">Thank you for your interest in our products and services. If you have any questions, feedback, or inquiries, please don't hesitate to get in touch with us. We value your opinion and are always ready to assist you.</p>
+                    <div class="row g-5"data-aos="fade-up" >
                         <div class="col-md-4 text-center">
                             <div class="btn-square mx-auto mb-3">
                                 <i class="fa fa-envelope fa-2x text-white"></i>
@@ -432,7 +457,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="footer-logo"  data-aos="fade-left" delay="500"><img  class="img-fluid"  src="logow.png"></div>
+                    <div class="footer-logo"  data-aos="fade-right"><img  class="img-fluid"  src="logow.png"></div>
                 </div>
                 <div class="col-lg-6">
                     <div class="footer-links">
