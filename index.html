@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+    <style>
+        /* Custom CSS for the carousel */
+        .carousel-item {
+            position: relative;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Reduce the brightness of the background images */
+            color: #fff;
+            padding: 10px;
+            margin: auto;
+            font-size: 23px;
+        }
+
+        .carousel-caption h2 {
+            font-family: 'Exo', sans-serif;
+            font-size: 40px; /* Double the font size for the carousel title */
+        }
+
+        .carousel-caption p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px; /* Font size for the carousel description */
+        }
+
+        /* Custom CSS for the navigation bar */
+        .navbar {
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+
+        /* Custom CSS for the navigation links */
+        .navbar-nav a.nav-link {
+            margin: 10px;
+            font-size: 22px;
+            justify-content: flex-end;
+        }
+
+        /* Custom CSS for the button */
+        .carousel-button {
+            background-color: green;
+            border: 2px solid green; /* Set the border color to green */
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: border-color 0.3s; /* Smooth transition for border color */
+            margin-top: 10px;
+            text-decoration: none; /* Remove text decoration */
+            border-radius: 20px; /* Add rounded border */
+        }
+
+        /* Button hover effect */
+        .carousel-button:hover {
+            border-color: #00ff00; /* Neon green border color on hover */
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+        }
+
+        .flex-item-image {
+            flex: 1;
+            padding: 10px;
+            order: 2;
+        }
+
+        .flex-item-text {
+            flex: 1;
+            padding: 10px;
+            order: 1; /* Text order set to 1, so it appears above image on smaller screens */
+        }
+        .flex-item-text p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 28px; /* Font size for the carousel description */
+        }
+        .flex-item-text h2 {
+            font-family: 'Exo', sans-serif;
+            color: green;
+            font-size: 38px; /* Font size for the carousel description */
+        }
+        .custom-image{
+            float: right;
+        }
+        .card-title {
+            font-family: 'Exo', sans-serif;
+            color: green;
+            font-size: 32px; /* Font size for the carousel description */
+        }
+        .card-text{
+            font-family: 'Roboto', sans-serif;
+            
+        }
+
+        .review-heading {
+            font-family: 'Exo', sans-serif;
+            font-size: 40px;
+            color: green;
+            text-align: center;
+        }
+
+        .review-content {
+    
+            font-family: 'Roboto', sans-serif;
+            font-size: 22px;
+        }
+        .footer {
+            border-top: 3px solid #00ff00; /* Neon green border at the top */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            color: #00ff00; /* Neon green color for the logo */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .footer-links a {
+            color: #fff; /* White color for the links */
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s; /* Smooth transition for link color on hover */
+        }
+
+        .footer-links a:hover {
+            color: #00ff00; /* Neon green color for the links on hover */
+        }
+        .card{
+            width: 25vw !important;
+            margin: 20px;
+        }
+        .carousel-item {
+            position: relative;
+            text-align: center; /* Center-align text inside carousel items */
+        }
+
+        .ctext {
+            font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+            color: #333; /* Text color */
+        }
+        .review {
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    margin:20px 30px 20px 30px;
+}
+
+.reviewer {
+    display: block;
+    text-align: right;
+    font-style: normal;
+    margin-top: 10px;
+    color: #00ff00; /* Neon green text color for the reviewer's name */
+    margin-bottom: 30px;
+}
+
+/*** Contact ***/
+
+.contact .btn-square {
+    width: 100px;
+    height: 100px;
+    border: 20px solid #F5F8F2;
+    background: #88B44E;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically center the icon */
+}
+
+/* Vertically center the font-awesome icons within the circular buttons */
+.contact .btn-square i {
+    line-height: 1; /* Reset line-height to 1 to center the icon */
+}
+
+
+        @media (max-width: 768px) {
+            .flex-container {
+                flex-direction: column;
+            }
+
+            .flex-item-text, .flex-item-image {
+                flex: none;
+                order: unset; /* Reset the order to default */
+            }
+            .flex-item-text h2{
+                font-size: 32px;
+            }
+            .card-title{
+                font-size: 32px;
+            }
+            .flex-item-text p{
+                font-size: 22px;
+            }
+            .custom-image {
+                float: none;
+            }
+
+            .container-fluid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .card{
+            width: 70vw !important;
+            margin: 10px;
+            margin: 20px 0 20px 0;
+        }
+          
+        }
+
+        @media (min-width: 768px) {
+            .container-fluid {
+                display: flex;
+                justify-content: center;
+            }
+            .card{
+            width: 70vw !important;
+            margin: 10px;
+            margin: 20px 0 20px 0;
+        }
+        }
+    </style>
+    <title>Light Studios</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img class="img-fluid " src="logo.png"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link active text-success" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link " href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="c1.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption" >
+                    <h2 data-aos="zoom-in" delay="1000">Power Your Victory</h2>
+                    <p data-aos="zoom-in" delay="1000">Equip your gaming rig with cutting-edge components for unstoppable performance.</p>
+                   
+                    <a href="#" class="carousel-button"data-aos="zoom-in" delay="1000" >Know More</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="c2.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 data-aos="zoom-in" delay="1000">Ultimate Gaming Setup</h2>
+                    <p data-aos="zoom-in" delay="1000">Craft your dream gaming setup with premium components and precision engineering.</p>
+                    <a href="#" class="carousel-button" data-aos="zoom-in" delay="1000">Know More</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="c3.jpg" class="d-block w-100 h-100" alt="...">
+                <div class="carousel-caption">
+                    <h2 data-aos="zoom-in" delay="1000">Unleash Gaming Potential</h2>
+                    <p data-aos="zoom-in" delay="1000">Discover top-tier hardware to elevate your gaming experience to new heights.</p>
+                    <a href="#" class="carousel-button" data-aos="zoom-in" delay="1000">Know More</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container mt-5">
+        <div class="flex-container">
+            <div class="flex-item-image" data-aos="fade-left" delay="500">
+                <img src="post1.jpg" alt="Image" class="img-fluid custom-image w-75">
+            </div>
+            <div class="flex-item-text" data-aos="fade-right" delay="500">
+                <h2>Unleashing the Power:<br> A Guide to Gaming Computer Components</h2>
+                <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;"> 
+                <p class="mt-4">Discover the thrilling world of gaming computer components that fuel your victories and immerse you in mesmerizing gameplay. In this comprehensive guide, we delve into the heart of high-performance gaming rigs and explore the key components that ensure you stay at the forefront of gaming excellence. From powerful processors and cutting-edge graphics cards to lightning-fast storage solutions, join us on a journey to unlock the true potential of your gaming experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;">
+    <center><h2 class="review-heading mx-5" data-aos="zoom-in" delay="500">Products</h2></center><br>
+    <div class="container-fluid  py-5" data-aos="fade-up" delay="500">
+       <div class="card flex-item mx-5">
+            <img src="p1.jpg" c5lass="card-img-top img-fluid w-100 h-100" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">RapidX Pro Gaming Chair</h5>
+                <p class="card-text">Experience ultimate comfort and support during intense gaming sessions with the RapidX Pro Gaming Chair. Ergonomically designed for gamers, this chair boasts adjustable armrests, lumbar support, and a high-back design to keep you focused and comfortable for hours.</p>
+            </div>
+        </div>
+        <div class="card flex-item mx-5">
+            <img src="p2.jpg" class="card-img-top img-fluid mb-4" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">HyperTech RGB Mechanical Gaming Keyboard</h5>
+                <p class="card-text">Dominate your opponents with lightning-fast response times and customizable RGB lighting on the HyperTech RGB Mechanical Gaming Keyboard. Featuring durable mechanical switches, anti-ghosting technology, and programmable macros, this keyboard is a must-have for competitive gamers.</p>
+            </div>
+        </div>
+        <div class="card flex-item mx-5">
+            <img src="p3.jpeg" class="card-img-top img-fluid h-100 w100" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">TitanZ Xtreme Gaming Desktop</h5>
+                <p class="card-text">Unleash unrivaled gaming performance with the TitanZ Xtreme Gaming Desktop. Powered by the latest high-end components, including a powerful GPU and ultra-fast SSD, this gaming rig ensures smooth gameplay and rapid loading times for an immersive gaming experience like no other.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;">
+    <div id="textCarousel" class="carousel slide mx-lg-5" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <center>
+                <h2 class="review-heading mx-5 mt-5 my-3" data-aos="zoom-in" delay="500">Review</h2><br>
+                  </center>
+            <div class="carousel-item active">
+                <blockquote class="review mb-3">
+                    <p class="ctext">
+                        I recently purchased computer components from Light studios, and I must say, I am thoroughly impressed. The performance of their products is outstanding, and they have undoubtedly enhanced my gaming experience. The build quality is top-notch, and the customer support was helpful and responsive. I highly recommend Light studios to anyone in need of reliable and high-performance computer components. A great investment for any gamer!
+                    </p>
+                    <cite class="reviewer">Review by John Smith</cite>
+                </blockquote>
+            </div>
+            <div class="carousel-item">
+              <blockquote class="review mb-3"><p class="ctext">I am an avid gamer, and I can't recommend Light studios enough. Their gaming peripherals are fantastic, and the gaming keyboard is a dream to use. The RGB lighting adds a cool vibe to my gaming setup, and the mechanical switches feel great under my fingers. It's a perfect blend of style and functionality!</p>
+                <cite class="reviewer">Review by David Wilson</cite>
+              </blockquote>
+            </div>
+            <div class="carousel-item">
+                <blockquote class="review mb-3"><p class="ctext">Light Studios provides the best computer components in the market. Their products are not only powerful but also aesthetically pleasing. I am a professional video editor, and their graphics card has significantly improved my workflow. I appreciate the attention to detail and the seamless performance. Kudos to the Light Studios Tech team!</p>
+                    <cite class="reviewer">Review by Emily Johnson</cite>
+                  </blockquote>
+            </div>
+        </div>
+    </div>
+    <hr style="border: none; height: 3px; background-color: #fcaf08f4; margin: 20px 0;">
+    <div class="container-xxl contact py-5 pt-5 pb-5">
+        <div class="container">
+            <div class="section-title text-center mx-auto" style="max-width: 500px;">
+                <h1 class="display-6 text-success" data-aos="zoom-in" delay="500">Contact us</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="text-center mb-5"  data-aos="fade-up" delay="500">Thank you for your interest in our products and services. If you have any questions, feedback, or inquiries, please don't hesitate to get in touch with us. We value your opinion and are always ready to assist you.</p>
+                    <div class="row g-5"data-aos="fade-up" delay="500">
+                        <div class="col-md-4 text-center">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-envelope fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">info@example.com</p>
+                            <p class="mb-0">support@example.com</p>
+                        </div>
+                        <div class="col-md-4 text-center ">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-phone fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">+012 345 67890</p>
+                            <p class="mb-0">+012 345 67890</p>
+                        </div>
+                        <div class="col-md-4 text-center ">
+                            <div class="btn-square mx-auto mb-3">
+                                <i class="fa fa-map-marker-alt fa-2x text-white"></i>
+                            </div>
+                            <p class="mb-2">123 Street</p>
+                            <p class="mb-0">New York, USA</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer bg-dark mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-logo"  data-aos="fade-left" delay="500"><img  class="img-fluid"  src="logow.png"></div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
